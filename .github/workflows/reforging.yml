@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        build_type: [KSU-AOSP, KSU-OEM, Non-KSU]
+        build_type: [KSU-AOSP]
 
     steps:
       - name: 🔄 Checkout Code
@@ -44,7 +44,7 @@ jobs:
 
       - name: 📥 Setup KernelSU
         if: matrix.build_type == 'KSU-AOSP' || matrix.build_type == 'KSU-OEM'
-        run: curl -LSs https://raw.githubusercontent.com/LyraVoid/FinaSU/refs/heads/master/kernel/setup.sh | bash -s main
+        run: curl -LSs https://github.com/backslashxx/KernelSU/blob/master/kernel/setup.sh | bash -s main
 
       - name: 📐 OEM Dimension
         if: matrix.build_type == 'KSU-OEM'
