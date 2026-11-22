@@ -44,7 +44,7 @@ jobs:
 
       - name: 📥 Setup KernelSU
         if: matrix.build_type == 'KSU-AOSP' || matrix.build_type == 'KSU-OEM'
-        run: curl -LSs https://github.com/backslashxx/KernelSU/blob/master/kernel/setup.sh | bash -s main
+        run: curl -LSs https://github.com/backslashxx/KernelSU/blob/master/kernel/setup.sh | bash -s master
 
       - name: 📐 OEM Dimension
         if: matrix.build_type == 'KSU-OEM'
